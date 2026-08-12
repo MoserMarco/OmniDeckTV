@@ -37,3 +37,4 @@ class PowerOffCommand(Command):
 class NoOpCommand(Command):
     def execute(self):
         print("[Command] No action selected")
+

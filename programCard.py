@@ -7,7 +7,7 @@ class programCard(ctk.CTkButton):
         # 1. Impostiamo di default text="" per rimuovere la scritta "CTkButton"
         kwargs.setdefault("text", "")
         kwargs.setdefault("fg_color", "black")
-        kwargs.setdefault("hover_color", "#B01A1A")
+        kwargs.setdefault("hover_color", "black")
         kwargs.setdefault("corner_radius", 20)
         self.command_obj = command
 
