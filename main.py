@@ -24,15 +24,15 @@ row_weight = [30,10,40,10,40,10,40,10]
 command_registry = {
     "Kodi": LaunchAppCommand("kodi"),
     "DVD": LaunchAppCommand("dvd"),
-    "Bluetooth": LaunchAppCommand("blueman-manager"),
-    "Dolphin": LaunchAppCommand("dolphin-emu"),
+    "Bluetooth": LaunchAppCommand("bluetooth"),
+    "RetroArch": LaunchAppCommand("retroarch"),
     "Mame": LaunchAppCommand("mame"),
-    "Exit": ExitCommand(root),
+    "Exit": ExitCommand(),
     "PowerOff": PowerOffCommand()
 }
-Programs=["Kodi", "DVD", "Bluetooth", "Dolphin", "Mame", "Extra1", "Extra2", "Exit", "PowerOff"]
-Images=["Kodi.png", "DVD.png", "Bluetooth.png", "Dolphin.jpg", "Mame.jpeg", "Extra.jpeg", "Extra.jpeg", "Exit.png", "Poweroff.png"]
-imagesRoot = "./Images/"
+Programs=["Kodi", "DVD", "Bluetooth", "RetroArch", "Mame", "Extra1", "Extra2", "Exit", "PowerOff"]
+Images=["Kodi.png", "DVD.png", "Bluetooth.png", "RetroArch.png", "Mame.jpeg", "Extra.jpeg", "Extra.jpeg", "Exit.png", "Poweroff.png"]
+imagesRoot = ("./images/")
 programCards = []
 for i in range(7):
     root.grid_columnconfigure(i, weight=column_weight[i])

@@ -1,6 +1,18 @@
 #commands.py
 import os
 from abc import ABC, abstractmethod
+import sys
+import subprocess
+
+command_to_launch_program = {
+    "kodi": ['flatpak', 'run', 'tv.kodi.Kodi'],
+    "dvd": ['/bin/bash','./scriptBash/dvd_Kodi.sh'],
+    "bluetooth": ['gnome-control-center', 'bluetooth'],
+    "retroarch": ['flatpak', 'run', 'org.libretro.RetroArch'],
+    "mame": ['ls', '-l'],
+
+
+}
 
 
 class Command(ABC):
@@ -19,19 +31,24 @@ class LaunchAppCommand(Command):
 
     def execute(self):
         print(f"[Command] Start software: {self.process_name}")
+        try:
+            subprocess.Popen(command_to_launch_program.get(self.process_name))
+        except Exception as e:
+            print(f"[Command] Error: {e}")
+
 
 
 class ExitCommand(Command):
-    def __init__(self, root_window):
-        self.root_window = root_window
     def execute(self):
         print("[Command] Close application...")
+        sys.exit(0)
 
 
 
 class PowerOffCommand(Command):
     def execute(self):
         print("[Command] Power Off...")
+        subprocess.run(['systemctl', 'poweroff'])
 
 
 class NoOpCommand(Command):
