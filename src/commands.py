@@ -6,7 +6,7 @@ import subprocess
 
 command_to_launch_program = {
     "kodi": ['flatpak', 'run', 'tv.kodi.Kodi'],
-    "dvd": ['/bin/bash','./scriptBash/dvd_Kodi.sh'],
+    "dvd": ['/bin/bash','../scripts/dvd_Kodi.sh'],
     "bluetooth": ['gnome-control-center', 'bluetooth'],
     "retroarch": ['flatpak', 'run', 'org.libretro.RetroArch'],
     "mame": ['ls', '-l'],
