@@ -3,13 +3,38 @@ import os
 from abc import ABC, abstractmethod
 import sys
 import subprocess
+import os
 
+# os.path.expanduser("~") converte automaticamente "~" nel percorso reale (es. /home/tuoutente)
+user_data = os.path.expanduser("~/.config/google-chrome")
 command_to_launch_program = {
-    "kodi": ['flatpak', 'run', 'tv.kodi.Kodi'],
-    "dvd": ['/bin/bash','../scripts/dvd_Kodi.sh'],
+
     "bluetooth": ['gnome-control-center', 'bluetooth'],
+    "dvd": ['/bin/bash','../scripts/dvd_Kodi.sh'],
+    "kodi": ['flatpak', 'run', 'tv.kodi.Kodi'],
+    "primevideo": [
+        'google-chrome',
+        f'--user-data-dir={user_data}',
+        '--profile-directory=Default',
+        '--start-fullscreen',
+        'https://www.primevideo.com'
+    ],
+    "netflix": [
+        'google-chrome',
+        f'--user-data-dir={user_data}',
+        '--profile-directory=Default',
+        '--start-fullscreen',
+        'https://www.netflix.com'
+    ],
+    "raiplay": [
+        'google-chrome',
+        f'--user-data-dir={user_data}',
+        '--profile-directory=Default',
+        '--start-fullscreen',
+        'https://www.raiplay.it'
+    ],
     "retroarch": ['flatpak', 'run', 'org.libretro.RetroArch'],
-    "mame": ['ls', '-l'],
+
 
 
 }

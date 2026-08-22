@@ -1,6 +1,6 @@
 import customtkinter as ctk
 from PIL import Image
-import commands
+
 
 class programCard(ctk.CTkButton):
     def __init__(self, master, command=None, image_path=None, **kwargs):
@@ -53,6 +53,7 @@ class programCard(ctk.CTkButton):
         padding = 12
         target_w = max(10, event.width - (padding * 2))
         target_h = max(10, event.height - (padding * 2))
+
 
         # Evitiamo di ricalcolare per variazioni minime di pixel
         if abs(self.last_size[0] - target_w) < 3 and abs(self.last_size[1] - target_h) < 3:

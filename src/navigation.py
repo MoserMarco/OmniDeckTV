@@ -1,7 +1,7 @@
 # navigation.py
 
 class GridNavigator:
-    def __init__(self, root, cards, rows=3, cols=3):
+    def __init__(self, root, cards, rows=3, cols=4):
         self.root = root
         self.cards = cards
         self.rows = rows

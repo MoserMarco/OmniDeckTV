@@ -1,9 +1,9 @@
 # main.py
 import customtkinter as ctk
-from programCard import programCard
-from commands import NoOpCommand
-from navigation import GridNavigator
-import config
+from .programCard import programCard
+from .commands import NoOpCommand
+from .navigation import GridNavigator
+from . import config
 
 
 ctk.set_appearance_mode("dark")
@@ -32,13 +32,13 @@ title_label = ctk.CTkLabel(
     fg_color="transparent",
     anchor="center"
 )
-title_label.grid(row=0, column=1, columnspan=5, sticky="nsew", padx=0, pady=(20, 0))
+title_label.grid(row=0, column=1, columnspan=7, sticky="nsew", padx=0, pady=(20, 0))
 
 
 program_cards = []
 for index, item in enumerate(config.PROGRAMS_DATA):
-    i = index // 3
-    j = index % 3
+    i = index // config.NUMBER_OF_COLUMNS
+    j = index % config.NUMBER_OF_COLUMNS
 
     cmd = config.COMMAND_REGISTRY.get(item["name"], NoOpCommand())
 
@@ -52,7 +52,7 @@ for index, item in enumerate(config.PROGRAMS_DATA):
     program_cards.append(pc)
 
 
-navigator = GridNavigator(root, program_cards, rows=3, cols=3)
+navigator = GridNavigator(root, program_cards, rows=config.NUMBER_OF_ROWS, cols=config.NUMBER_OF_COLUMNS)
 
 
 root.after(200, lambda: program_cards[0].select())
