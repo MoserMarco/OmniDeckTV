@@ -17,8 +17,9 @@ COMMAND_REGISTRY = {
     "PowerOff": PowerOffCommand(),
     "Kodi": LaunchAppCommand("kodi"),
     "PrimeVideo": LaunchAppCommand("primevideo"),
-    "Netflix": LaunchAppCommand("netflix"),
+
     "RaiPlay": LaunchAppCommand("raiplay"),
+    "YouTube": LaunchAppCommand("youtube"),
     "RetroArch": LaunchAppCommand("retroarch"),
     "Exit": ExitCommand(),
 
@@ -26,14 +27,14 @@ COMMAND_REGISTRY = {
 
 # Definizione dei programmi nella griglia (3x3)
 PROGRAMS_DATA = [
-    {"name": "Remote",    "image": os.path.join(IMAGES_DIR, "Extra.jpeg")},
+    {"name": "Remote",    "image": os.path.join(IMAGES_DIR, "Remote.png")},
     {"name": "Bluetooth", "image": os.path.join(IMAGES_DIR, "Bluetooth.png")},
     {"name": "DVD",       "image": os.path.join(IMAGES_DIR, "DVD.png")},
     {"name": "PowerOff",   "image": os.path.join(IMAGES_DIR, "Poweroff.png")},
     {"name": "Kodi",      "image": os.path.join(IMAGES_DIR, "Kodi.png")},
     {"name": "PrimeVideo",    "image": os.path.join(IMAGES_DIR, "Primevideo.jpeg")},
-    {"name": "Netflix",    "image": os.path.join(IMAGES_DIR, "Netflix.jpeg")},
     {"name": "RaiPlay",    "image": os.path.join(IMAGES_DIR, "Raiplay.png")},
+    {"name": "YouTube",    "image": os.path.join(IMAGES_DIR, "Youtube.jpg")},
     {"name": "RetroArch", "image": os.path.join(IMAGES_DIR, "RetroArch.png")},
     {"name": "Extra1",    "image": os.path.join(IMAGES_DIR, "Extra.jpeg")},
     {"name": "Extra2",    "image": os.path.join(IMAGES_DIR, "Extra.jpeg")},

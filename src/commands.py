@@ -10,7 +10,7 @@ user_data = os.path.expanduser("~/.config/google-chrome")
 command_to_launch_program = {
 
     "bluetooth": ['gnome-control-center', 'bluetooth'],
-    "dvd": ['/bin/bash','../scripts/dvd_Kodi.sh'],
+    "dvd": ['/bin/bash','../scripts/playDVD.sh'],
     "kodi": ['flatpak', 'run', 'tv.kodi.Kodi'],
     "primevideo": [
         'google-chrome',
@@ -19,13 +19,6 @@ command_to_launch_program = {
         '--start-fullscreen',
         'https://www.primevideo.com'
     ],
-    "netflix": [
-        'google-chrome',
-        f'--user-data-dir={user_data}',
-        '--profile-directory=Default',
-        '--start-fullscreen',
-        'https://www.netflix.com'
-    ],
     "raiplay": [
         'google-chrome',
         f'--user-data-dir={user_data}',
@@ -33,6 +26,14 @@ command_to_launch_program = {
         '--start-fullscreen',
         'https://www.raiplay.it'
     ],
+    "youtube": [
+        'google-chrome',
+        f'--user-data-dir={user_data}',
+        '--profile-directory=Default',
+        '--start-fullscreen',
+        'https://www.youtube.com'
+    ],
+
     "retroarch": ['flatpak', 'run', 'org.libretro.RetroArch'],
 
 
@@ -46,7 +47,7 @@ class Command(ABC):
         pass
 
     def __call__(self):
-        """Rende l'oggetto 'Callable', consentendo a CustomTkinter di invocarlo come una funzione."""
+
         return self.execute()
 
 # 2. Comandi Concreti
