@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # Configurazione PC da accendere (dummy dati per ora)
 PC_MAC = "f4:4e:e3:0e:05:92"
-PC_IP= "127.0.0.1"
+PC_IP= "host.docker.internal"
 PC_PORT = 5000
 @app.route("/")
 def index():
