@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Remote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div id="everyThing">
+        <div class="lastRow">
+            <div class="imgButton">
+                <img src="{{ url_for('static', filename='Images/PowerOff.png') }}" onclick="sendWake()">
+
+            </div>
+            <div class="imgButton">
+                <img src="{{ url_for('static', filename='Images/Mouse.png') }}" onclick="mouse()">
+            </div>
+        </div>
+
+    <div class="remote-pad">
+        <!-- up arrow -->
+        <div class="arrow arrow-up " onclick="sendKey('up')">
+            <img  src="{{ url_for('static', filename='Images/Up.png') }}" >
+        </div>
+
+        <!-- left arrow-->
+        <div class="arrow arrow-left " onclick="sendKey('left')">
+            <img  src="{{ url_for('static', filename='Images/Left.png') }}" >
+        </div>
+
+
+
+        <!-- right arrow-->
+        <div class="arrow arrow-right " onclick="sendKey('right')">
+            <img  src="{{ url_for('static', filename='Images/Right.png') }}" >
+        </div>
+
+        <!-- down arrow-->
+        <div class="arrow arrow-down "  onclick="sendKey('down')">
+            <img  src="{{ url_for('static', filename='Images/Down.png') }}" >
+        </div>
+
+        <!-- enter -->
+        <button class="enter-btn " onclick="sendKey('enter')">OK</button>
+    </div>
+    <div class="lastRow">
+        <div class="imgButton">
+            <img src="{{ url_for('static', filename='Images/Space.png') }}" onclick="sendKey('space')">
+
+        </div>
+        <div class="imgButton">
+            <img src="{{ url_for('static', filename='Images/Esc.png') }}" onclick="sendKey('esc')">
+        </div>
+    </div>
+        <br id="brBeetwenButtons">
+        <div class="lastRow">
+            <div class="imgButton">
+                <img src="{{ url_for('static', filename='Images/Home.png') }}" onclick="sendKey('home')">
+
+            </div>
+            <div class="imgButton">
+                <img src="{{ url_for('static', filename='Images/Back.png') }}" onclick="sendKey('back')">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
