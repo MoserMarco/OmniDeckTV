@@ -9,6 +9,7 @@ app = Flask(__name__)
 PC_MAC = "f4:4e:e3:0e:05:92"
 PC_IP= "host.docker.internal"
 PC_PORT = 5000
+REMOTE_PORT = 5001
 @app.route("/")
 def index():
     return render_template("remote.html")
@@ -52,4 +53,4 @@ def mouse_move():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=False)
+    app.run(host="0.0.0.0", port=REMOTE_PORT, debug=False)
