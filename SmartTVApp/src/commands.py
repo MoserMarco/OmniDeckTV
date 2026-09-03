@@ -12,6 +12,7 @@ command_to_launch_program = {
     "bluetooth": ['gnome-control-center', 'bluetooth'],
     "dvd": ['/bin/bash','../scripts/playDVD.sh'],
     "kodi": ['flatpak', 'run', 'tv.kodi.Kodi'],
+    "wifi": ['gnome-control-center', 'wifi'],
     "primevideo": [
         'google-chrome',
         f'--user-data-dir={user_data}',
@@ -35,6 +36,7 @@ command_to_launch_program = {
     ],
 
     "retroarch": ['flatpak', 'run', 'org.libretro.RetroArch'],
+
 
 
 
