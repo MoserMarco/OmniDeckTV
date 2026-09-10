@@ -1,0 +1,14 @@
+
+
+services:
+  remotecontrol:
+
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    container_name: remotecontrol
+    image: marcomoser/remotecontrol
+    ports:
+      - "5001:5001"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

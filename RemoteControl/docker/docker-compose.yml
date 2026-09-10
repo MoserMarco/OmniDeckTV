@@ -1,0 +1,19 @@
+
+
+services:
+  remotecontrol:
+
+    image: marcomoser/remotecontrol:latest
+
+    container_name: remotecontrol
+
+
+    restart: unless-stopped
+
+
+    ports:
+      - "5001:5001"
+
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
