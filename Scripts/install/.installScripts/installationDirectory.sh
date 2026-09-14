@@ -16,7 +16,7 @@ INSTALLATION_DIRECTORY=$2
 
 
 echo "--> Removing unused files from RemoteControl..."
-find $PROGRAM_DIRECTORY/RemoteControl -mindepth 1 ! -name "docker-compose.yml" -delete
+
 rm -rf $PROGRAM_DIRECTORY/RemoteControl/static
 rm -rf $PROGRAM_DIRECTORY/RemoteControl/templates
 rm -rf $PROGRAM_DIRECTORY/RemoteControl/app.py
