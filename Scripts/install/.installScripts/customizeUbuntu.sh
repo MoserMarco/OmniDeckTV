@@ -17,7 +17,7 @@ echo "--> Configuring Dash applications..."
 # 2. Terminal
 # 3. Files (Nautilus)
 # 4. Settings
-FAVORITES="['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Settings.desktop']"
+FAVORITES="['google-chrome.desktop', 'org.gnome.Ptyxis.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Settings.desktop']"
 
 gsettings set org.gnome.shell favorite-apps "$FAVORITES"
 
