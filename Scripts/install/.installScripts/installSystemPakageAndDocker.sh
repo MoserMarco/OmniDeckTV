@@ -17,7 +17,7 @@ sudo apt-get install -y \
     ca-certificates \
     gnupg \
     wget \
-    flatpack
+    flatpak \
     git
 
 echo "--> Installing Docker..."
