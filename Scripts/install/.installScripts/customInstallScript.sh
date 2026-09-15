@@ -7,8 +7,7 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-# Locate current script directory
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 
 # Helper function to ask user confirmation for optional steps
 confirm_step() {
@@ -38,12 +37,14 @@ INSTALLATION_DIRECTORY="${USER_DIR:-$DEFAULT_DIR}"
 PROGRAM_DIRECTORY="$(dirname "$(dirname "$(dirname "$SCRIPT_DIR")")")"
 NAME_PROGRAM_DIRECTORY="${PROGRAM_DIRECTORY##*/}"
 TARGET_DIR="$INSTALLATION_DIRECTORY/$NAME_PROGRAM_DIRECTORY"
+SCRIPT_DIR_TARGHET="$TARGET_DIR/Scripts/install/.installScripts"
 
 echo "[INFO] Script Directory:          $SCRIPT_DIR"
 echo "[INFO] Program Directory:         $PROGRAM_DIRECTORY"
 echo "[INFO] Installation Directory:    $INSTALLATION_DIRECTORY"
 echo "[INFO] Name of Program Directory: $NAME_PROGRAM_DIRECTORY"
 echo "[INFO] Target Directory:          $TARGET_DIR"
+echo "[INFO] Script Directory Target:   $SCRIPT_DIR_TARGHET"
 
 echo ""
 echo "Target Directory set to: $INSTALLATION_DIRECTORY"
@@ -68,13 +69,13 @@ echo "--> Application moved successfully!"
 # Step 2: System Packages & Docker
 echo ""
 echo "=== 2. Installing system packages and Docker (Mandatory) ==="
-"$SCRIPT_DIR/installSystemPakageAndDocker.sh"
+"$SCRIPT_DIR_TARGHET/installSystemPakageAndDocker.sh"
 echo "--> System packages and Docker installed successfully!"
 
 # Step 3: Application Setup
 echo ""
 echo "=== 3. Setting up Python environments and Docker container (Mandatory) ==="
-"$SCRIPT_DIR/setupApplication.sh" "$TARGET_DIR"
+"$SCRIPT_DIR_TARGHET/setupApplication.sh" "$TARGET_DIR"
 echo "--> Application setup completed!"
 
 
@@ -84,7 +85,7 @@ echo "--> Application setup completed!"
 echo ""
 echo "=== 4. Installing third-party software (Optional) ==="
 if confirm_step "Do you want to install third-party applications?"; then
-  "$SCRIPT_DIR/installThirdPartSoftware.sh"
+  "$SCRIPT_DIR_TARGHET/installThirdPartSoftware.sh"
   echo "--> All third-party software installed!"
 else
   echo "--> Skipped step 4."
@@ -94,7 +95,7 @@ fi
 echo ""
 echo "=== 5. Customizing Ubuntu environment (Optional) ==="
 if confirm_step "Do you want to apply Ubuntu desktop customizations (dark theme & dock)?"; then
-  "$SCRIPT_DIR/customizeUbuntu.sh"
+  "$SCRIPT_DIR_TARGHET/customizeUbuntu.sh"
   echo "--> Ubuntu customization applied successfully!"
 else
   echo "--> Skipped step 5."
@@ -104,7 +105,7 @@ fi
 echo ""
 echo "=== 6. Configuring auto-start on boot (Optional) ==="
 if confirm_step "Do you want the application to start automatically on system boot?"; then
-  "$SCRIPT_DIR/autoStartOnBoot.sh" "$TARGET_DIR"
+  "$SCRIPT_DIR_TARGHET/autoStartOnBoot.sh" "$TARGET_DIR"
   echo "--> Auto-start configuration completed!"
 else
   echo "--> Skipped step 6."

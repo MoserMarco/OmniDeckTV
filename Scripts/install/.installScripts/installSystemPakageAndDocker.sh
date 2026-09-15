@@ -19,6 +19,7 @@ sudo apt-get install -y \
     wget \
     flatpak \
     dbus-x11 \
+    python3-tk \
     git
 
 echo "--> Installing Docker..."
@@ -42,6 +43,6 @@ EOF
 
 sudo apt update
 
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 echo

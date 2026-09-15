@@ -20,6 +20,7 @@ echo "[INFO] Program Directory:         $PROGRAM_DIRECTORY"
 echo "[INFO] Installation Directory:    $INSTALLATION_DIRECTORY"
 echo "[INFO] Name of Program Directory: $NAME_PROGRAM_DIRECTORY"
 echo "[INFO] Target Directory:          $TARGET_DIR"
+echo "[INFO] Script Directory Target:   $SCRIPT_DIR_TARGHET"
 
 echo "=================================================="
 echo " Starting Full Automatic Installation"

@@ -2,9 +2,13 @@
 set -e
 
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-COMPOSE_FILE="$SCRIPT_DIR/../../RemoteControl/docker/docker-compose.yml"
-SMARTTV_APP_DIR="$SCRIPT_DIR/../../SmartTVApp"
+
+# Locate current script directory
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+PROGRAM_DIRECTORY="$(dirname "$(dirname "$SCRIPT_DIR")")"
+COMPOSE_FILE="$PROGRAM_DIRECTORY/RemoteControl/docker/docker-compose.yml"
+SMARTTV_APP_DIR="$PROGRAM_DIRECTORY/SmartTVApp"
+
 
 
 echo "=== 1. Starting Remote Control Docker Container"
