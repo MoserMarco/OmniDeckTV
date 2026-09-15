@@ -18,6 +18,7 @@ sudo apt-get install -y \
     gnupg \
     wget \
     flatpak \
+    dbus-x11 \
     git
 
 echo "--> Installing Docker..."

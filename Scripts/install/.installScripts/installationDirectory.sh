@@ -30,5 +30,5 @@ echo "--> Moving $PROGRAM_DIRECTORY to $INSTALLATION_DIRECTORY..."
 mkdir -p "$INSTALLATION_DIRECTORY"
 mv $PROGRAM_DIRECTORY $INSTALLATION_DIRECTORY
 
-sudo ln -sf "$INSTALLATION_DIRECTORY/Scripts/install/run_all.sh" /usr/local/bin/tvcontrolhub
+sudo
 

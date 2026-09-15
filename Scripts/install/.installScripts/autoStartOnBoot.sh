@@ -1,7 +1,10 @@
 #!/bin/bash
+INSTALLATION_DIRECTORY=$1
 SERVICE_FILE="/etc/systemd/system/tvcontrolhub.service"
 CURRENT_USER="$USER"
 TARGET_DIR="${TARGET_DIR:-/usr/local/bin}"
+
+ln -sf "$INSTALLATION_DIRECTORY/Scripts/install/run_all.sh" /usr/local/bin/tvcontrolhub
 
 echo "--> Configuring automatic startup at boot..."
 
