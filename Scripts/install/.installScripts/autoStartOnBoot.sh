@@ -18,7 +18,7 @@ ln -sf "$INSTALLATION_DIRECTORY/Scripts/install/run_all.sh" /usr/local/bin/tvcon
 
 echo "--> Configuring automatic startup at boot..."
 
-mkdir -p "$HOME/.config/autostart"
+mkdir -p "$USER_HOME/.config/autostart"
 
 
 cat << EOL > "$SERVICE_FILE"
@@ -48,15 +48,8 @@ EOL
 # Set proper security permissions (resolves "Invalid Permissions")
 chmod 755 "$DESKTOP_ICON"
 
-# Authorize the shortcut (bypasses "Allow Launching" right-click step)
-if [ -n "$SUDO_USER" ]; then
-    chown "$SUDO_USER:$SUDO_USER" "$DESKTOP_ICON"
-
-
-    sudo -u "$SUDO_USER" DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u "$SUDO_USER")/bus" gio trust "$DESKTOP_ICON" 2>/dev/null || true
-else
-    gio trust "$DESKTOP_ICON" 2>/dev/null || true
-fi
+# Set proper trusted=true (resolves "Allow launching")
+gio set "$DESKTOP_ICON" metadata::trusted true
 
 echo "[SUCCESS] Desktop shortcut successfully created at: $DESKTOP_ICON"
 

@@ -6,7 +6,11 @@ echo "--------------------------------------------------"
 echo " Starting uninstallation of TVControlHub..."
 echo "--------------------------------------------------"
 
-
+if [ -n "$SUDO_USER" ]; then
+    USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
+else
+    USER_HOME="$HOME"
+fi
 
 
 # Remove binary from /usr/local/bin
@@ -19,7 +23,7 @@ else
 fi
 
 # Remove Desktop Icon from $HOME/Desktop/tvcontrolhub.desktop
-DESKTOP_ICON="$HOME/Desktop/tvcontrolhub.desktop"
+DESKTOP_ICON="$USER_HOME/Desktop/tvcontrolhub.desktop"
 if [ -f "$DESKTOP_ICON" ]; then
     echo "Removing executable from $DESKTOP_ICON..."
     rm -f "$DESKTOP_ICON"
@@ -28,7 +32,7 @@ else
 fi
 
 # Remove Autoboot Service from  $HOME/.config/autostart/tvcontrolhub.desktop
-AUTOBOOT_SERVICE="$HOME/.config/autostart/tvcontrolhub.desktop"
+AUTOBOOT_SERVICE="$USER_HOME/.config/autostart/tvcontrolhub.desktop"
 if [ -f "$AUTOBOOT_SERVICE" ]; then
     echo "Removing executable from $AUTOBOOT_SERVICE..."
     rm -f "$AUTOBOOT_SERVICE"

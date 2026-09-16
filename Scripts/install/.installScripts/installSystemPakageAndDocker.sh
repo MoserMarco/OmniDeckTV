@@ -45,8 +45,8 @@ sudo apt update
 
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-sudo groupadd docker
-sudo usermod -aG docker $USER
+TARGET_USER="${SUDO_USER:-$USER}"
+sudo usermod -aG docker "$TARGET_USER"
 
 
 echo
