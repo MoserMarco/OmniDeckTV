@@ -46,6 +46,11 @@ else
     echo "Application directory not found. Skipping."
 fi
 
+
+rm -f /usr/local/bin/tvcontrolhub
+rm -f $HOME/Desktop/tvcontrolhub.desktop
+rm -f $HOME/.config/autostart/tvcontrolhub.desktop
+
 echo "--------------------------------------------------"
 echo " TVControlHub has been successfully uninstalled."
 echo "--------------------------------------------------"

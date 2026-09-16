@@ -115,3 +115,5 @@ echo ""
 echo "=================================================="
 echo "         INSTALLATION PROCESS FINISHED            "
 echo "=================================================="
+
+echo "Please reboot computer with command 'reboot'"

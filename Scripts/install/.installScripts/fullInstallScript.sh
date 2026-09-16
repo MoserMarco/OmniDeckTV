@@ -61,3 +61,6 @@ echo ""
 echo "=================================================="
 echo " AUTOMATIC INSTALLATION COMPLETED SUCCESSFULLY!"
 echo "=================================================="
+
+echo ""
+echo "Please reboot computer with command 'reboot'"
