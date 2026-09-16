@@ -13,6 +13,8 @@ echo "=== Starting TVControlHub Setup, Target Directory: $1 ==="
 
 PROGRAM_DIRECTORY=$1
 INSTALLATION_DIRECTORY=$2
+NAME_PROGRAM_DIRECTORY="${PROGRAM_DIRECTORY##*/}"
+TARGET_DIR="$INSTALLATION_DIRECTORY/$NAME_PROGRAM_DIRECTORY"
 
 
 echo "--> Removing unused files from RemoteControl..."
@@ -29,6 +31,9 @@ rm -rf $PROGRAM_DIRECTORY/Scripts/dev
 echo "--> Moving $PROGRAM_DIRECTORY to $INSTALLATION_DIRECTORY..."
 mkdir -p "$INSTALLATION_DIRECTORY"
 mv $PROGRAM_DIRECTORY $INSTALLATION_DIRECTORY
+
+sudo chmod 777 "$TARGET_DIR/SmartTVApp/images"
+
 
 
 
