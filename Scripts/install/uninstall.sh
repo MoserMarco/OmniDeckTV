@@ -42,7 +42,7 @@ fi
 
 # Determine the program directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROGRAM_DIRECTORY="$(dirname "$(dirname "$(dirname "$SCRIPT_DIR")")")"
+PROGRAM_DIRECTORY="$(dirname "$(dirname "$SCRIPT_DIR")")"
 
 # Remove application directory without interactive prompts
 if [ -d "$PROGRAM_DIRECTORY" ]; then

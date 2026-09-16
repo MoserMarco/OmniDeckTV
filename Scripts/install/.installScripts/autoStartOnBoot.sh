@@ -45,11 +45,22 @@ Icon=$DESKTOP_ICON_IMAGE
 Terminal=false
 EOL
 
-# Set proper security permissions (resolves "Invalid Permissions")
+
+# Set standard execution permissions
 chmod 755 "$DESKTOP_ICON"
 
-# Set proper trusted=true (resolves "Allow launching")
-gio set "$DESKTOP_ICON" metadata::trusted true
+# Mark the file as trusted on modern desktop environments
+if command -v gio &> /dev/null; then
+    # Attempt trust marking via gio custom metadata
+    gio set "$DESKTOP_ICON" custom::trusted true 2>/dev/null || true
+    # Enable trusted launch for GNOME
+    gio set "$DESKTOP_ICON" metadata::trusted true 2>/dev/null || true
+fi
+
+# If the file exists on the user's Desktop, remove the launch restrictions
+if [ -f "$DESKTOP_ICON" ]; then
+    gio set "$DESKTOP_ICON" metadata::trusted yes 2>/dev/null || true
+fi
 
 echo "[SUCCESS] Desktop shortcut successfully created at: $DESKTOP_ICON"
 
