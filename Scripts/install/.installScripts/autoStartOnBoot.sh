@@ -10,9 +10,7 @@ fi
 SERVICE_FILE="$USER_HOME/.config/autostart/tvcontrolhub.desktop"
 DESKTOP_ICON="$USER_HOME/Desktop/tvcontrolhub.desktop"
 DESKTOP_ICON_IMAGE="$INSTALLATION_DIRECTORY/SmartTVApp/images/Icon.png"
-echo "$SERVICE_FILE"
-echo "$DESKTOP_ICON"
-echo "$DESKTOP_ICON_IMAGE"
+
 
 ln -sf "$INSTALLATION_DIRECTORY/Scripts/install/run_all.sh" /usr/local/bin/tvcontrolhub
 
@@ -49,18 +47,7 @@ EOL
 # Set standard execution permissions
 chmod 755 "$DESKTOP_ICON"
 
-# Mark the file as trusted on modern desktop environments
-if command -v gio &> /dev/null; then
-    # Attempt trust marking via gio custom metadata
-    gio set "$DESKTOP_ICON" custom::trusted true 2>/dev/null || true
-    # Enable trusted launch for GNOME
-    gio set "$DESKTOP_ICON" metadata::trusted true 2>/dev/null || true
-fi
 
-# If the file exists on the user's Desktop, remove the launch restrictions
-if [ -f "$DESKTOP_ICON" ]; then
-    gio set "$DESKTOP_ICON" metadata::trusted yes 2>/dev/null || true
-fi
 
 echo "[SUCCESS] Desktop shortcut successfully created at: $DESKTOP_ICON"
 

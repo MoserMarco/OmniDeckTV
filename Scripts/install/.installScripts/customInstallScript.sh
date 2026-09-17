@@ -85,7 +85,7 @@ echo "--> Application setup completed!"
 echo ""
 echo "=== 4. Installing third-party software (Optional) ==="
 if confirm_step "Do you want to install third-party applications?"; then
-  "$SCRIPT_DIR_TARGHET/installThirdPartSoftware.sh"
+  "$SCRIPT_DIR_TARGHET/installThirdPartySoftware.sh"
   echo "--> All third-party software installed!"
 else
   echo "--> Skipped step 4."

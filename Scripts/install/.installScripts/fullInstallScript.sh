@@ -44,7 +44,7 @@ echo "--> Application setup completed!"
 
 echo ""
 echo "=== 4. Installing third-party software ==="
-"$SCRIPT_DIR_TARGHET/installThirdPartSoftware.sh"
+"$SCRIPT_DIR_TARGHET/installThirdPartySoftware.sh"
 echo "--> All third-party software installed!"
 
 echo ""
