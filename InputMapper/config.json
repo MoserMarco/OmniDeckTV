@@ -1,0 +1,26 @@
+{
+  "ConfigurationSelected": true,
+  "Offset": -128,
+  "DeadZone": 25.6,
+  "306": "BTN_SOUTH",
+  "305": "BTN_EAST",
+  "304": "BTN_NORTH",
+  "307": "BTN_WEST",
+  "310": "BTN_TL",
+  "311": "BTN_TR",
+  "308": "BTN_TL2",
+  "309": "BTN_TR2",
+  "312": "BTN_SELECT",
+  "313": "BTN_START",
+  "316": "BTN_MODE",
+  "314": "BTN_THUMBL",
+  "315": "BTN_THUMBR",
+  "axes": {
+    "0": "ABS_X",
+    "1": "ABS_Y",
+    "2": "ABS_RX",
+    "5": "ABS_RY",
+    "16": "ABS_HAT0X",
+    "17": "ABS_HAT0Y"
+  }
+}
