@@ -41,4 +41,5 @@ class GridNavigator:
 
     def execute_selected(self):
         if self.cards and self.current_index < len(self.cards):
-            self.cards[self.current_index].invoke()
+
+            self.cards[self.current_index].execute()

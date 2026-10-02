@@ -4,31 +4,32 @@ from PIL import Image
 
 class programCard(ctk.CTkButton):
     def __init__(self, master, command=None, image_path=None, **kwargs):
-        # 1. Impostiamo di default text="" per rimuovere la scritta "CTkButton"
+
         kwargs.setdefault("text", "")
         kwargs.setdefault("fg_color", "black")
         kwargs.setdefault("hover_color", "black")
         kwargs.setdefault("corner_radius", 20)
+        kwargs["state"] = "disabled"
+
+        super().__init__(master, **kwargs)
+
         self.command_obj = command
-
-        super().__init__(master, command=self._on_click, **kwargs)
-
         self.image_path = image_path
         self.pil_image_original = None
         self.ctk_image = None
         self.last_size = (0, 0)
 
-        # 2. Carichiamo l'immagine originale
+
         if self.image_path:
             try:
                 self.pil_image_original = Image.open(self.image_path)
             except Exception as e:
                 print(f"Errore caricamento immagine {self.image_path}: {e}")
 
-        # 3. Colleghiamo il ridimensionamento automatico dell'immagine al bottone
+
         self.bind("<Configure>", self._update_image_size)
 
-    def _on_click(self):
+    def execute(self):
 
         if self.command_obj:
             self.command_obj.execute()
