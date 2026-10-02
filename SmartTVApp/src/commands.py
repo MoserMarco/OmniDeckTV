@@ -4,13 +4,17 @@ from abc import ABC, abstractmethod
 import sys
 import subprocess
 import os
+from pathlib import Path
 
 # os.path.expanduser("~") converte automaticamente "~" nel percorso reale (es. /home/tuoutente)
 user_data = os.path.expanduser("~/.config/google-chrome")
+CURRENT_DIR = Path(__file__).resolve().parent
+SCRIPT_DVD_PATH = CURRENT_DIR.parent / "scripts" / "playDVD.sh"
+SCRIPT_RETROARCH_PATH = CURRENT_DIR.parent / "scripts" / "retroarch.sh"
 command_to_launch_program = {
 
     "bluetooth": ['gnome-control-center', 'bluetooth'],
-    "dvd": ['/bin/bash','../scripts/playDVD.sh'],
+    "dvd": ['/bin/bash',str(SCRIPT_DVD_PATH)],
     "kodi": ['flatpak', 'run', 'tv.kodi.Kodi'],
     "wifi": ['gnome-control-center', 'wifi'],
     "primevideo": [
@@ -35,8 +39,8 @@ command_to_launch_program = {
         'https://www.youtube.com'
     ],
 
-    "retroarch": ['flatpak', 'run', 'org.libretro.RetroArch'],
 
+    "retroarch": ['/bin/bash',str(SCRIPT_RETROARCH_PATH)],
 
 
 

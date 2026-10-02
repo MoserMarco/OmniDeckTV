@@ -3,13 +3,13 @@ from app.gamepadListener import GamepadListener
 
 
 def main():
-    executor = CommandExecutor()
-    controller = GamepadListener(executor)
+
+    controller = GamepadListener()
 
     try:
         controller.listen()
     except KeyboardInterrupt:
-        print("\n[SYSTEM] Chiusura...")
+        print("\n[SYSTEM] CLOSING...")
 
 
 if __name__ == "__main__":
