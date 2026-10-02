@@ -32,7 +32,7 @@ echo "--> Moving $PROGRAM_DIRECTORY to $INSTALLATION_DIRECTORY..."
 mkdir -p "$INSTALLATION_DIRECTORY"
 mv $PROGRAM_DIRECTORY $INSTALLATION_DIRECTORY
 
-sudo chmod 777 "$TARGET_DIR/SmartTVApp/images"
+sudo chmod 700 "$TARGET_DIR/SmartTVApp/images"
 
 
 

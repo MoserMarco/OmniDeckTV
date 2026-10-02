@@ -3,9 +3,9 @@ set -e
 
 # Find the directory where THIS script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
+PROGRAM_DIRECTORY="$(dirname "$(dirname "$SCRIPT_DIR")")"
 # Define the relative path to the docker-compose.jml file
-COMPOSE_FILE="$SCRIPT_DIR/../../RemoteControl/docker/docker-compose.dev.yml"
+COMPOSE_FILE="$PROGRAM_DIRECTORY/RemoteControl/docker/docker-compose.dev.yml"
 
 echo "=== 1. Making the development scripts executable ==="
 # Grant execution permissions (+x is safer than 700 and doesn't require sudo)
@@ -15,8 +15,9 @@ echo "--> All development scripts are now executable."
 
 echo ""
 echo "=== 2. Creating Python virtual environments ==="
-"$SCRIPT_DIR/.devScripts/setupEnv.sh" "$SCRIPT_DIR/../../SmartTVApp"
-"$SCRIPT_DIR/.devScripts/setupEnv.sh" "$SCRIPT_DIR/../../RemoteControl"
+"$SCRIPT_DIR/.devScripts/setupEnv.sh" "$PROGRAM_DIRECTORY/SmartTVApp"
+"$SCRIPT_DIR/.devScripts/setupEnv.sh" "$PROGRAM_DIRECTORY/RemoteControl"
+"$SCRIPT_DIR/.devScripts/setupEnv.sh" "$PROGRAM_DIRECTORY/InputMapper"
 echo "--> All Python environments are ready."
 
 echo ""

@@ -47,6 +47,6 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 
 TARGET_USER="${SUDO_USER:-$USER}"
 sudo usermod -aG docker "$TARGET_USER"
-
+sudo usermod -aG input "$TARGET_USER"
 
 echo
