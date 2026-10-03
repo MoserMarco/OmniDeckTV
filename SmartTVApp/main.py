@@ -1,9 +1,9 @@
 # main.py
 import customtkinter as ctk
-from .programCard import programCard
-from .commands import NoOpCommand
-from .navigation import GridNavigator
-from . import config
+from src.programCard import programCard
+from src.commands import NoOpCommand
+from src.navigation import GridNavigator
+from src import config
 
 
 ctk.set_appearance_mode("dark")

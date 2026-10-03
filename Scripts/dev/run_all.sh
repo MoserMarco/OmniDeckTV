@@ -42,7 +42,7 @@ if [ ! -f "$SMARTTV_PYTHON" ]; then
     exit 1
 fi
 cd $SMARTTV_APP_DIR
-"$SMARTTV_PYTHON" -m src.main
+"$SMARTTV_PYTHON" -m main
 
 echo "--> Input Mapper Launched in Background "
 

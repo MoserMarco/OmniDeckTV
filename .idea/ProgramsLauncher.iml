@@ -8,7 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/ImputMapper/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/InputMapper/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="~/Documents/Coding/Projects/ProgramsLauncher/InputMapper/.venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="~/Documents/Coding/Projects/ProgramsLauncher/SmartTVApp/.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
