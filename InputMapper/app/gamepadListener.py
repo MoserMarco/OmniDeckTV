@@ -167,8 +167,8 @@ class GamepadListener:
         # 1. PHYSICAL BUTTONS (EV_KEY)
         # -------------------------------------------------------------
         if event.type == ecodes.EV_KEY and event.value == 1:
-            if cmd_name in KEY_COMMAND_MAP:
-                return KEY_COMMAND_MAP[cmd_name]()
+            if cmd_name in PAD_COMMAND_MAP:
+                return PAD_COMMAND_MAP[cmd_name]()
             if cmd_name in ["BTN_SELECT","BTN_START"]:
                 time.sleep(1)
 

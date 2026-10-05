@@ -1,7 +1,7 @@
 import time
 from dataclasses import dataclass
 from evdev import UInput, ecodes as e
-
+import os
 events = {
     e.EV_KEY: [
         # Keyboard keys
@@ -187,6 +187,13 @@ class CloseSoftwareCommand(Command):
 
     def execute(self):
         press_hotkey(e.KEY_LEFTALT, e.KEY_F4)
+
+class PowerOffCommand(Command):
+    def __init__(self):
+        super().__init__(type="CLOSE_SOFTWARE")
+
+    def execute(self):
+        os.system("shutdown -h now")
 class NoneCommand(Command):
     def __init__(self):
         super().__init__(type="NONE")
@@ -199,7 +206,7 @@ class NoneCommand(Command):
 # KEY COMMAND MAPPING
 # ==========================================
 
-KEY_COMMAND_MAP = {
+PAD_COMMAND_MAP = {
     # Buttons A, B, X, Y
     "BTN_SOUTH": lambda: LeftClickCommand(),
     "BTN_A": lambda: LeftClickCommand(),
@@ -223,3 +230,31 @@ KEY_COMMAND_MAP = {
     "BTN_THUMBL": lambda: NoneCommand(),
     "BTN_THUMBR": lambda: NoneCommand(),
 }
+
+REMOTE_COMMAND_MAP = {
+    # Mouse
+    "LEFTCLICK": lambda: LeftClickCommand(),
+    "RIGHTCLICK": lambda: RightClickCommand(),
+    "SCROLLUP": lambda: ScrollUpCommand(),
+    "SCROLLDOWN": lambda: ScrollDownCommand(),
+
+    # Key
+    "PAUSE": lambda: PauseCommand(),
+    "BACK": lambda: BackCommand(),
+    "ENTER": lambda: EnterCommand(),
+    "VOLUMEDOWN": lambda: VolumeDownCommand(),
+    "VOLUMEUP": lambda: VolumeUpCommand(),
+
+    "UPARROW": lambda: KeyUpCommand(),
+    "LEFTARROW": lambda: KeyLeftCommand(),
+    "RIGHTARROW": lambda: KeyRightCommand(),
+    "DOWNARROW": lambda: KeyDownCommand(),
+
+    # Syste
+    "CLOSESOFTWARE": lambda: CloseSoftwareCommand(),
+    "POWEROFF": lambda: PowerOffCommand(),
+    "HOME": lambda: NoneCommand(),
+
+
+}
+
