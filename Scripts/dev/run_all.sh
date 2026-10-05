@@ -33,7 +33,7 @@ fi
 
 
 
-echo "--> Input Mapper Launched in Background "
+
 
 echo " 3. Launching SmartTVApp Python Application"
 
@@ -44,11 +44,11 @@ fi
 cd $SMARTTV_APP_DIR
 "$SMARTTV_PYTHON" -m main
 
-echo "--> Input Mapper Launched in Background "
 
 
 
 
-echo "=== 3. Closing Python Application and Deactivating Environment"
+
+echo "=== 3. Closing Python Application"
 
 

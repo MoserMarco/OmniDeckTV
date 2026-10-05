@@ -4,10 +4,10 @@ from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
 
-# Configurazione PC da accendere (dummy dati per ora)
+
 PC_MAC = "f4:4e:e3:0e:05:92"
-#PC_IP= "host.docker.internal"
-PC_IP= "127.0.0.1"
+PC_IP= "host.docker.internal"
+#PC_IP= "127.0.0.1"
 PC_PORT = 5000
 REMOTE_PORT = 5001
 @app.route("/")
