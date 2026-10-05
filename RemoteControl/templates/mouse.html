@@ -7,13 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div id="everyThing">
-        <div class="lastRow">
+    <div id="everyThingMouse">
+        <div class="MouseRow">
             <div class="imgButton">
                 <img src="{{ url_for('static', filename='Images/Remote.png') }}" onclick="remote()">
-
             </div>
-
         </div>
 
 
@@ -22,13 +20,22 @@
         </div>
 
 
-        <div class="lastRow">
+        <div class="MouseRow">
                 <div class="imgButton">
-                    <img src="{{ url_for('static', filename='Images/MouseLeft.png') }}" onclick="sendKey('mouseLeft')">
+                    <img src="{{ url_for('static', filename='Images/MouseLeft.png') }}" onclick="sendKey('LEFTCLICK')">
 
                 </div>
+                 <div class="volume">
+                     <div class="imgButton">
+                        <img src="{{ url_for('static', filename='Images/VolumeUp.png') }}" onclick="sendKey('VOLUMEUP')">
+                    </div>
+                     <br id="brBeetwenButtons">
+                     <div class="imgButton">
+                        <img src="{{ url_for('static', filename='Images/VolumeDown.png') }}" onclick="sendKey('VOLUMEDOWN')">
+                    </div>
+                </div>
                 <div class="imgButton">
-                    <img src="{{ url_for('static', filename='Images/MouseRight.png') }}" onclick="sendKey('mouseRight')">
+                    <img src="{{ url_for('static', filename='Images/MouseRight.png') }}" onclick="sendKey('RIGHTCLICK')">
                 </div>
         </div>
     </div>

@@ -9,9 +9,9 @@
 <body>
 
     <div id="everyThing">
-        <div class="lastRow">
+        <div class="FirstRow">
             <div class="imgButton">
-                <img src="{{ url_for('static', filename='Images/PowerOff.png') }}" onclick="sendWake()">
+                <img src="{{ url_for('static', filename='Images/PowerOff.png') }}" onclick="sendKey('POWEROFF')">
 
             </div>
             <div class="imgButton">
@@ -47,23 +47,28 @@
     </div>
     <div class="lastRow">
         <div class="imgButton">
-            <img src="{{ url_for('static', filename='Images/Space.png') }}" onclick="sendKey('space')">
+            <img src="{{ url_for('static', filename='Images/Pause.png') }}" onclick="sendKey('PAUSE')">
+        </div>
+        <div class="imgButton">
+            <img src="{{ url_for('static', filename='Images/VolumeUp.png') }}" onclick="sendKey('VOLUMEUP')">
+        </div>
+        <div class="imgButton">
+            <img src="{{ url_for('static', filename='Images/Back.png') }}" onclick="sendKey('BACK')">
+        </div>
+    </div>
+    <br id="brBeetwenButtons">
+    <div class="lastRow">
+        <div class="imgButton">
+            <img src="{{ url_for('static', filename='Images/Home.png') }}" onclick="sendKey('HOME')">
 
         </div>
         <div class="imgButton">
-            <img src="{{ url_for('static', filename='Images/Esc.png') }}" onclick="sendKey('esc')">
+            <img src="{{ url_for('static', filename='Images/VolumeDown.png') }}" onclick="sendKey('VOLUMEDOWN')">
+        </div>
+        <div class="imgButton">
+            <img src="{{ url_for('static', filename='Images/CloseSoftware.png') }}" onclick="sendKey('CLOSESOFTWARE')">
         </div>
     </div>
-        <br id="brBeetwenButtons">
-        <div class="lastRow">
-            <div class="imgButton">
-                <img src="{{ url_for('static', filename='Images/Home.png') }}" onclick="sendKey('home')">
-
-            </div>
-            <div class="imgButton">
-                <img src="{{ url_for('static', filename='Images/Back.png') }}" onclick="sendKey('back')">
-            </div>
-        </div>
     </div>
 
 

@@ -3,22 +3,34 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;       /* orizzontale */
-    justify-content: center;   /* verticale */
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    background-color: #2b2b2b; /* grigio scuro */
+    background-color: #2b2b2b;
     color: #f0f0f0;
-    height: 80vh;             /* altezza viewport */
+    height: 80vh;
 
-    margin: 0;                 /* elimina margini default */
+    margin: 0;
 
 }
 #everyThing{
 
     display: flex;
     flex-direction: column;
-    align-items: center;       /* orizzontale */
-    justify-content: initial;   /* verticale */
+    align-items: center;
+    justify-content: initial;
+    text-align: center;
+    height: 100%;
+
+}
+#everyThingMouse{
+
+
+    padding-top: 3.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: initial;
     text-align: center;
     height: 100%;
 
@@ -37,19 +49,18 @@ button {
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
-    background-color: #555; /* grigio medio */
+    background-color: #555;
     color: white;
     transition: 0.2s;
 }
 
 
 .btn-red {
-    background-color: #ff3b3b; /* rosso principale */
+    background-color: #ff3b3b;
     color: white;
 }
 
 
-/* Pad direzionale */
 .remote-pad {
     position: relative;
     width: 55vw;
@@ -60,14 +71,13 @@ button {
     box-shadow: 0px 0px 10px red;
 }
 
-/* Frecce */
 .arrow {
     position: absolute;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none; /* opzionale, se vuoi rimuovere anche il bordo */
+    border: none;
     border-radius: 50%;
 
 }
@@ -110,7 +120,6 @@ button {
     height: 30vw;
 }
 
-/* Pulsante invio centrale */
 .enter-btn {
     position: absolute;
     top: 50%;
@@ -119,7 +128,7 @@ button {
     width: 17vw;
     height: 17vw;
     border-radius: 50%;
-    background-color: #999; /* grigio chiaro */
+    background-color: #999;
     font-size: 4vw;
     color: black;
     font-weight: bold;
@@ -130,11 +139,27 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 17vw;
+    gap: 5vw;
     overflow: hidden;
     padding: 7px;
 }
+.FirstRow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25vw;
+    overflow: hidden;
+    padding: 7px;
+}
+.MouseRow{
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    overflow: hidden;
+    padding: 30px;
+}
 img{
     border-radius: 50%;
     object-fit: cover;
@@ -157,8 +182,8 @@ img{
       position: relative;
       touch-action: none;
       box-shadow: 0px 0px 10px red;
-      margin-bottom: 60px;
-      margin-top: 60px;
+      margin-bottom: 15px;
+      margin-top: 15px;
 }
 
 .stick {
