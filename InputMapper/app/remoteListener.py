@@ -20,7 +20,7 @@ class RemoteListener():
                 coordinates = command.split(":")[1].split(",")
                 x, y = int(coordinates[0]), int(coordinates[1])
                 MoveMouseCommand(x,y).execute()
-                print(x,y)
+
             else:
                 REMOTE_COMMAND_MAP[command]().execute()
 

@@ -7,7 +7,8 @@ COMPOSE_FILE="$INSTALLATION_DIRECTORY/RemoteControl/docker/docker-compose.yml"
 echo "--> Creating Python virtual environments ==="
 "$INSTALLATION_DIRECTORY/Scripts/install/.installScripts/setupEnv.sh" "$INSTALLATION_DIRECTORY/SmartTVApp"
 "$INSTALLATION_DIRECTORY/Scripts/install/.installScripts/setupEnv.sh" "$INSTALLATION_DIRECTORY/InputMapper"
-
+sudo usermod -aG input $USER
+echo 'KERNEL=="uinput", MODE="0660", GROUP="input"' | sudo tee /etc/udev/rules.d/99-uinput.rules
 
 echo "-> All Python environments are ready."
 

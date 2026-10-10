@@ -250,7 +250,7 @@ REMOTE_COMMAND_MAP = {
     "RIGHTARROW": lambda: KeyRightCommand(),
     "DOWNARROW": lambda: KeyDownCommand(),
 
-    # Syste
+    # System
     "CLOSESOFTWARE": lambda: CloseSoftwareCommand(),
     "POWEROFF": lambda: PowerOffCommand(),
     "HOME": lambda: NoneCommand(),
