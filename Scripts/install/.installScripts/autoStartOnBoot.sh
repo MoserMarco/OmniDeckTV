@@ -22,7 +22,7 @@ mkdir -p "$USER_HOME/.config/autostart"
 cat << EOL > "$SERVICE_FILE"
 [Desktop Entry]
 Type=Application
-Name=TV Control Hub
+Name=OmniDeckTV
 Exec=/usr/local/bin/omnidecktv
 Terminal=false
 X-GNOME-Autostart-enabled=true
@@ -37,7 +37,7 @@ cat << EOL > "$DESKTOP_ICON"
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=TV Control Hub
+Name=OmniDeckTV
 Exec=/usr/local/bin/omnidecktv
 Icon=$DESKTOP_ICON_IMAGE
 Terminal=false
