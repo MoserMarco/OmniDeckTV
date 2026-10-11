@@ -7,12 +7,12 @@ else
     USER_HOME="$HOME"
 fi
 
-SERVICE_FILE="$USER_HOME/.config/autostart/tvcontrolhub.desktop"
-DESKTOP_ICON="$USER_HOME/Desktop/tvcontrolhub.desktop"
+SERVICE_FILE="$USER_HOME/.config/autostart/omnidecktv.desktop"
+DESKTOP_ICON="$USER_HOME/Desktop/omnidecktv.desktop"
 DESKTOP_ICON_IMAGE="$INSTALLATION_DIRECTORY/SmartTVApp/images/Icon.png"
 
 
-ln -sf "$INSTALLATION_DIRECTORY/Scripts/install/run_all.sh" /usr/local/bin/tvcontrolhub
+ln -sf "$INSTALLATION_DIRECTORY/Scripts/install/run_all.sh" /usr/local/bin/omnidecktv
 
 echo "--> Configuring automatic startup at boot..."
 
@@ -23,13 +23,13 @@ cat << EOL > "$SERVICE_FILE"
 [Desktop Entry]
 Type=Application
 Name=TV Control Hub
-Exec=/usr/local/bin/tvcontrolhub
+Exec=/usr/local/bin/omnidecktv
 Terminal=false
 X-GNOME-Autostart-enabled=true
 EOL
 
 
-echo "[SUCCESS] The tvcontrolhub service is configured and started!"
+echo "[SUCCESS] The omnidecktv service is configured and started!"
 
 echo "--> Creating icon in the desktop"
 # Create the .desktop file with absolute paths
@@ -38,7 +38,7 @@ cat << EOL > "$DESKTOP_ICON"
 Version=1.0
 Type=Application
 Name=TV Control Hub
-Exec=/usr/local/bin/tvcontrolhub
+Exec=/usr/local/bin/omnidecktv
 Icon=$DESKTOP_ICON_IMAGE
 Terminal=false
 EOL

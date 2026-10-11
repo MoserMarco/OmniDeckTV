@@ -9,7 +9,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 echo "--------------------------------------------------"
-echo " Starting uninstallation of TVControlHub..."
+echo " Starting uninstallation of OmniDeckTV..."
 echo "--------------------------------------------------"
 
 if [ -n "$SUDO_USER" ]; then
@@ -20,7 +20,7 @@ fi
 
 
 # Remove binary from /usr/local/bin
-BINARY_FILE="/usr/local/bin/tvcontrolhub"
+BINARY_FILE="/usr/local/bin/omnidecktv"
 if [ -f "$BINARY_FILE" ]; then
     echo "Removing executable from /usr/local/bin..."
     rm -f "$BINARY_FILE"
@@ -28,8 +28,8 @@ else
     echo "Executable not found in /usr/local/bin. Skipping."
 fi
 
-# Remove Desktop Icon from $HOME/Desktop/tvcontrolhub.desktop
-DESKTOP_ICON="$USER_HOME/Desktop/tvcontrolhub.desktop"
+# Remove Desktop Icon from $HOME/Desktop/omnidecktv.desktop
+DESKTOP_ICON="$USER_HOME/Desktop/omnidecktv.desktop"
 if [ -f "$DESKTOP_ICON" ]; then
     echo "Removing executable from $DESKTOP_ICON..."
     rm -f "$DESKTOP_ICON"
@@ -37,8 +37,8 @@ else
     echo "Executable not found in $DESKTOP_ICON. Skipping."
 fi
 
-# Remove Autoboot Service from  $HOME/.config/autostart/tvcontrolhub.desktop
-AUTOBOOT_SERVICE="$USER_HOME/.config/autostart/tvcontrolhub.desktop"
+# Remove Autoboot Service from  $HOME/.config/autostart/omnidecktv.desktop
+AUTOBOOT_SERVICE="$USER_HOME/.config/autostart/omnidecktv.desktop"
 if [ -f "$AUTOBOOT_SERVICE" ]; then
     echo "Removing executable from $AUTOBOOT_SERVICE..."
     rm -f "$AUTOBOOT_SERVICE"
@@ -169,5 +169,5 @@ flatpak uninstall --unused -y
 apt update -y
 apt upgrade -y
 echo "--------------------------------------------------"
-echo " TVControlHub has been successfully uninstalled."
+echo " OmniDeckTV has been successfully uninstalled."
 echo "--------------------------------------------------"

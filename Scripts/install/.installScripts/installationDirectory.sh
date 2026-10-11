@@ -9,7 +9,7 @@ if [ "$#" -lt 2 ]; then
 fi
 
 
-echo "=== Starting TVControlHub Setup, Target Directory: $1 ==="
+echo "=== Starting OmniDeckTV Setup, Target Directory: $1 ==="
 
 PROGRAM_DIRECTORY=$1
 INSTALLATION_DIRECTORY=$2

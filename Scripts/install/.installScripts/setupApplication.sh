@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "=== Setup of TVControlHub ==="
+echo "=== Setup of OmniDeckTV ==="
 INSTALLATION_DIRECTORY=$1
 COMPOSE_FILE="$INSTALLATION_DIRECTORY/RemoteControl/docker/docker-compose.yml"
 echo "--> Creating Python virtual environments ==="

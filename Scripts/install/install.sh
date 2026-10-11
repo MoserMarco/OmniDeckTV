@@ -20,7 +20,7 @@ echo "--> All development scripts are now executable."
 show_menu() {
     clear
     echo "=================================================="
-    echo "        TVControlHub Installation Menu            "
+    echo "        OmniDeckTV Installation Menu            "
     echo "=================================================="
     echo " 1) Automatic Installation (Recommended)"
     echo "    - Full setup: apps, Docker, theme & autostart"
